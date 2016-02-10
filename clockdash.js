@@ -1,3 +1,5 @@
+var twelveHour = true;
+
 function tock() {
     var d = new Date();
     var m = d.getMinutes();
@@ -6,7 +8,15 @@ function tock() {
     } else {
         m.toString();
     }
-    var time = d.getHours().toString() + ":" + m;
+    if (twelveHour) {
+        var h = d.getHours();
+        if (h > 12) {
+            h = h - 12;
+        }
+    } else {
+        var h = d.getHours().toString();
+    }
+    var time = h + ":" + m;
     var weekdays = [
         'Sunday',
         'Monday',
@@ -35,6 +45,7 @@ function tock() {
     document.getElementById("digitalclock").innerHTML = time;
     document.getElementById("date").innerHTML = date;
 }
+
 function tick() {
     tock();
     setInterval(tock, 5000);
