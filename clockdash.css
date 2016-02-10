@@ -1,0 +1,20 @@
+body {
+    background: #222;
+    color: #ddd;
+    font-family: "DejaVu Serif", serif;
+    font-size: 12pt;
+    margin:20px;
+    text-align:center;
+}
+#wrapper {
+    height: 36em;
+    position: relative;
+    top: 50%;
+    transform: translateY(20%);
+}
+#digitalclock {
+    font-size: 30em;
+}
+#date {
+    font-size: 6em;
+}
